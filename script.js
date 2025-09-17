@@ -10,6 +10,14 @@ function addTask() {
         // Crea un nuovo elemento li
         const li = document.createElement('li');
         li.textContent = taskText;
+
+        // Crea bottone di eliminazione
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Elimina';
+        deleteBtn.className = 'delete-btn';
+
+        // Aggiungi bottone al li
+        li.appendChild(deleteBtn);
         taskList.appendChild(li);
         taskInput.value = ''; // Svuota l'input
     }
@@ -22,5 +30,11 @@ addTaskButton.addEventListener('click', addTask);
 taskInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         addTask();
+    }
+});
+
+taskList.addEventListener('click', function(event) {
+    if (event.target.className === 'delete-btn') {
+        event.target.parentElement.remove();
     }
 });
