@@ -16,10 +16,37 @@ function addTask() {
         deleteBtn.textContent = 'Elimina';
         deleteBtn.className = 'delete-btn';
 
+        const completeBtn = document.createElement('button');
+        completeBtn.textContent = 'Completa';
+        completeBtn.className = 'complete-btn';
+
         // Aggiungi bottone al li
+        li.appendChild(completeBtn);
         li.appendChild(deleteBtn);
         taskList.appendChild(li);
         taskInput.value = ''; // Svuota l'input
+    }
+}
+
+async function loadTasks() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=5');
+        const tasks = await response.json();
+        tasks.forEach(task => {
+            const li = document.createElement('li');
+            li.textContent = task.title;
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Elimina';
+            deleteBtn.className = 'delete-btn';
+            const completeBtn = document.createElement('button');
+            completeBtn.textContent = 'Completa';
+            completeBtn.className = 'complete-btn';
+            li.appendChild(completeBtn);
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+        });
+    } catch (error) {
+        console.error('Errore nel caricamento dei task:', error);
     }
 }
 
@@ -36,5 +63,10 @@ taskInput.addEventListener('keypress', function(event) {
 taskList.addEventListener('click', function(event) {
     if (event.target.className === 'delete-btn') {
         event.target.parentElement.remove();
+    } else if (event.target.className === 'complete-btn') {
+        const li = event.target.parentElement;
+        li.classList.toggle('completed'); // Alterna la classe per barratura
     }
 });
+
+window.addEventListener('load', loadTasks);

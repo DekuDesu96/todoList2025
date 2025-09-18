@@ -44,3 +44,20 @@
 .delete-btn:hover {
     background: #cc0000;
 }
+
+.complete-btn {
+    background: #4CAF50; /* Verde per "completa" */
+    color: white;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+.complete-btn:hover {
+    background: #45a049;
+}
+.completed {
+    text-decoration: line-through; /* Barratura */
+    color: #888; /* Grigio per completati */
+}
