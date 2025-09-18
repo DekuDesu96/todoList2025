@@ -5,18 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viaggia Smart</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-    <body>
-  <section id="todo">
-    <h2>La Mia Todo List</h2>
-      <div class="todo-container">
-        <input type="text" id="taskInput" placeholder="Inserisci un task">
-        <button id="addTask">Aggiungi</button>
-        <button id="toggleCompleted">Mostra Solo Completati</button>
-        <ul id="taskList"></ul>
-        <button id="nextPage">Pagina Successiva</button>
-      </div>
-  </section>
-  <script src="script.js"></script>
-    </body>
+<body>
+    <header>
+        <h1>Viaggia Smart App</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Funzionalità</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero" class="hero-bg">
+            <div class="hero-overlay">
+                <h2>Esplora il Mondo Facile</h2>
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=200&fit=crop" alt="App Preview - Aereo in volo">
+            </div>
+        </section>
+        <section id="features">
+            <h2>Funzionalità Principali</h2>
+            <div class="features-grid">
+                <article class="card">
+                    <h3>Itinerari Personalizzati</h3>
+                    <p>Scopri percorsi su misura per te.</p>
+                </article>
+                <article class="card">
+                    <h3>Mappe Offline</h3>
+                    <p>Naviga senza connessione.</p>
+                </article>
+                <article class="card">
+                    <h3>Consigli Locali</h3>
+                    <p>Scopri segreti dai locals.</p>
+                </article>
+            </div>
+        </section>
+        <section id="testimonials">
+            <h2>Cosa Dicono i Nostri Utenti</h2>
+            <div class="testimonial-bg">
+                <p>"App fantastica per viaggiare!" - Mario R.</p>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contattaci</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Messaggio" rows="4"></textarea>
+                <button type="submit">Invia</button>
+            </form>
+        </section>
+        <section id="todo">
+            <h2>La Mia Todo List</h2>
+            <div class="todo-container">
+                <input type="text" id="taskInput" placeholder="Inserisci un task">
+                <button id="addTask">Aggiungi</button>
+                <ul id="taskList"></ul>
+                <button id="toggleCompleted">Mostra Solo Completati</button>
+                <button id="nextPage">Pagina Successiva</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Viaggia Smart</p>
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="var(--primary-color)" />
+        </svg>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
 </html>
